@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.UUID;
 
@@ -13,21 +15,25 @@ import java.util.UUID;
 @AllArgsConstructor
 @Entity
 @Table(name = "usuario")
-public class UsuarioModel {
+public class UsuarioModel implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "nome_usuario", nullable = false, length = 70)
+    @NotBlank
+    @Column(name = "nome_usuario", nullable = false)
     private String nomeUsuario;
 
     @Column(name = "data_nascimento", nullable = false)
     private LocalDate dataNascimento;
 
-    @Column(name = "email_usuario")
+    @Column(name = "email")
+    @NotBlank(message = "Email nao informado !!")
     private String email;
 
-    @Column(name = "cpf_usuario")
+    @Column(name = "cpf")
+    @NotBlank(message = "CPF não informado ")
     private String cpf;
+
 }
