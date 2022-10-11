@@ -9,34 +9,52 @@
     <div></div>
 </head>
 <body>
-    <h1 class="text-center">Cadastro de usuários</h1>
+   <h1 class = "text-center">Cadastro de Usuários</h1> 
 
-    <!--Form para cadastro de usuário-->
-    <form id="usuario-form">
-    <div class="m-5">
-      <h1 class="text-center"><label class="form-label">Nome usuario</label><h1>
-      <input type="text-center" name="nomeUsuario" class="form-control" id="nomeUsuario" placeholder=" Informe o seu nome de usuário">
-    </div>
-
+    <!--Form para cadastro de usuários-->
     <form id="usuario-form">
         <div class="m-5">
-          <h1 class="text-center"><label class="form-label">Data de nascimento</label><h1>
-          <input type="text-center" name="nomeUsuario" class="form-control" id="nomeUsuario" placeholder=" Informe a sua data de nascimento">
+            <h1 class="text-center"><label class="form-label">Nome usuario</label><h1>
+            <input type="text" name = "nomeUsuario" class="form-control" id="nomeUsuario" placeholder="nome do usuário" required>
         </div>
-
-    <form id="usuario-form">
         <div class="m-5">
-            <h1 class="text-center"><label class="form-laber">E - mail</label></h1>
-            <input type="text-center" name="email" class="form-control" id="email" placeholder="Informe o seu e - mail">
-        </div>    
-
-
-    </form id="usuario-form">
+            <h1 class="text-center"><label class="form-label">Data de nascimento</label><h1>
+            <input type="text" name = "dataNascimento" class="form-control" id="dataNascimento" placeholder="data de nascimento">
+        </div>
         <div class="m-5">
-            <h1 class="text-center"> <label class="form-laber"> Cpf</label></h1>
-            <input type="text-center" name="cpf" class="form-control" id="cpf" placeholder="Informe o seu cpf">
-        </div>  
-        
-    
+            <h1 class="text-center"><label class="form-label">CPF</label><h1>
+            <input type="text" name = "cpf"  class="form-control" id="cpf" placeholder="coloque seu cpf" required>
+        </div>
+        <div class="m-5">
+            <h1 class="text-center"><label class="form-label"> E-mail</label><h1>
+            <input type="email" name = "email" class="form-control" id="email" placeholder="coloque seu email" required> 
+        </div>
+        <button type="submit" onclick="msg()" class="btn btn-lg  btn-dark m-2 d-grid gap col-2 mx-auto">Enviar</button>
+    </form>
+
+
+    <h3>Lista de usuários</h3>
+    <!-- A table para mostrar os usuários-->
+    <table id="table-suario" class="table table-striped" style="width:100%">
+        <!--cabeçalho-->
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Data de Nascimento</th>
+                <th scope="col">CPF</th>
+                <th scope="col">E-mail</th>
+            </tr>
+        </thead>
+        <!--Corpo do tbody. E gerido pelo js-->
+        <tbody id="usuarioDados">
+        </tbody>
+    </table>
+    <!--Caminho para o JS, pasta e arquivo-->
+    <script src="js/usuario.js" ></script>
+</body>
+</html>
+
+
 </body>
 </html>
