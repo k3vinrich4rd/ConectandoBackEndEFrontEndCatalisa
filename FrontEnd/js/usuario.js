@@ -5,7 +5,7 @@ form.addEventListener('submit', event => { //ouvir até o submit ser acionado
 
     const formData = new FormData(form); // Pega o formulário e java em uma variável 
     const data = Object.fromEntries(formData); // Se torna em objeto 
-
+    
     fetch("http://localhost:8080/usuarios", {
         method: 'POST',
         headers: {
