@@ -19,8 +19,9 @@ public class UsuarioService {
         return iUsuarioRepository.findAll();
     }
 
-    public Optional<UsuarioModel> findById(Long id) {
-        return iUsuarioRepository.findById(id);
+    public UsuarioModel findById(Long id) {
+        Optional<UsuarioModel> obj = iUsuarioRepository.findById(id);
+        return obj.get();
     }
 
     public List<UsuarioModel> findByNomeUsuario(String nomeUsuario) {
@@ -31,7 +32,12 @@ public class UsuarioService {
         return iUsuarioRepository.save(usuarioModel);
     }
 
-    public UsuarioModel alterarCadUsuario(UsuarioModel usuarioModel) {
+    public UsuarioModel alterarCadUsuario(UsuarioModel usuarioModel, Long id) {
+        UsuarioModel newUsuario = findById(id);
+        newUsuario.setNomeUsuario(usuarioModel.getNomeUsuario());
+        newUsuario.setDataNascimento(usuarioModel.getDataNascimento());
+        newUsuario.setEmail(newUsuario.getEmail());
+
         return iUsuarioRepository.save(usuarioModel);
     }
 
