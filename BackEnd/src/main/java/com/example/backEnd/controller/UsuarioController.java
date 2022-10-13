@@ -25,7 +25,7 @@ public class UsuarioController {
 
     @CrossOrigin(origins = "http://127.0.0.1:5500")
     @GetMapping(path = "pesquisaid/{id}")
-    public ResponseEntity<Optional<UsuarioModel>> buscarPorId(@PathVariable Long id) {
+    public ResponseEntity<UsuarioModel> buscarPorId(@PathVariable Long id) {
         return ResponseEntity.ok().body(usuarioService.findById(id));
     }
 
@@ -44,13 +44,14 @@ public class UsuarioController {
 
     @CrossOrigin(origins = "http://127.0.0.1:5500")
     @PatchMapping(path = "/put/{id}")
-    public ResponseEntity<UsuarioModel> alterarUsuario(@RequestBody UsuarioModel usuarioModel) {
-        return ResponseEntity.ok(usuarioService.alterarCadUsuario(usuarioModel));
+    public ResponseEntity<UsuarioModel> alterarUsuario(@RequestBody UsuarioModel usuarioModel, @PathVariable Long id) {
+        UsuarioModel usuarioNewObj = usuarioService.alterarCadUsuario(usuarioModel, id);
+        return ResponseEntity.ok().body(usuarioNewObj);
     }
 
     @CrossOrigin(origins = "http://127.0.0.1:5500")
     @DeleteMapping(path = "/delete/{id}")
-    public void deletarConta(@PathVariable Long id){
+    public void deletarConta(@PathVariable Long id) {
         usuarioService.deletarUsuario(id);
     }
 
