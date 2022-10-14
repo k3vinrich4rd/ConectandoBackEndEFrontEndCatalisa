@@ -33,7 +33,7 @@ public class UsuarioModel implements Serializable {
     private String email;
 
     @Column(name = "cpf")
-//    @NotBlank(message = "CPF não informado ")
+    //@NotBlank(message = "CPF não informado ")
     private String cpf;
 
 }

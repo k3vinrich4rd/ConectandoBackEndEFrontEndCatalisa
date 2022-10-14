@@ -35,7 +35,7 @@ public class UsuarioService {
     public UsuarioModel alterarCadUsuario(UsuarioModel usuarioModel, Long id) {
         UsuarioModel newUsuario = findById(id);
         newUsuario.setNomeUsuario(usuarioModel.getNomeUsuario());
-        newUsuario.setCpf(usuarioModel.getCpf());
+        //newUsuario.setCpf(usuarioModel.getCpf());
         newUsuario.setDataNascimento(usuarioModel.getDataNascimento());
         newUsuario.setEmail(newUsuario.getEmail());
 
