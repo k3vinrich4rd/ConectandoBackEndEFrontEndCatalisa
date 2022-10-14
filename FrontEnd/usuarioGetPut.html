@@ -23,25 +23,27 @@
 
         <div class="m-5">
             <h3 class="text-center"><label class="form-label">Name user</label><h3>
-            <input type="text"  class="form-control" id="nomeUsuario" placeholder="Informe seu nome de usuário" >
+            <input type="text"  class="form-control" name="nomeUsuario" id="nomeUsuario" placeholder="Informe seu nome de usuário" >
         </div>
 
         <div class="m-5">
         <h3 class="text-center"><label class="form-label">Birth data</label><h3>
-            <input type="text" class="form-control" id="dataNascimento" placeholder="Informe a sua data de nascimento">
+            <input type="text" class="form-control" name="dataNascimento" id="dataNascimento" placeholder="Informe a sua data de nascimento">
         </div>
 
         <div class="m-5">
             <h3 class="text-center"><label class="form-label">CPF</label><h3>
-          <input type="text"  class="form-control" id="cpf" placeholder="Informe seu cpf" >
+          <input type="text"  class="form-control" name="cpf" id="cpf" placeholder="Informe seu cpf" disabled >
         </div>
         
         <div class="m-5">
             <h3 class="text-center"><label class="form-label">E - mail</label><h3>
-            <input type="text" class="form-control" id="email" placeholder="Informe seu E-mail" >
+            <input type="text" class="form-control" name="email" id="email" placeholder="Informe seu E-mail" >
         </div>
       </div>
+      <button type="submit" id="btnUpdate" onclick="msg()" class="btn btn-lg  btn-dark m-2 d-grid gap col-2 mx-auto">Atualizar usuário</button>
       <button type="submit" id="btnDelete" class="btn btn-lg  btn-dark m-2 d-grid gap col-2 mx-auto">Deletar Usuário</button>
+      
    </form>
 
     <script src="js/usuarioGetPut.js" ></script>
