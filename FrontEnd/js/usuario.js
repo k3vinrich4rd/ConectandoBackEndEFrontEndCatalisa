@@ -1,11 +1,11 @@
 const form = document.getElementById("usuario-form")
 
-form.addEventListener('submit', event => { //ouvir até o submit ser acionado 
+form.addEventListener('submit', event => { // ouvir até o submit ser acionado
     event.preventDefault();
 
     const formData = new FormData(form); // Pega o formulário e java em uma variável 
     const data = Object.fromEntries(formData); // Se torna em objeto 
-    
+
     fetch("http://localhost:8080/usuarios", {
         method: 'POST',
         headers: {
@@ -22,7 +22,7 @@ function msg() {
     window.location.reload(true);
   }
 
-    //table - trazer usuários cadastrados na tela
+  //table - trazer usuários cadastrados na tela
 fetch("http://localhost:8080/usuarios").then((data)=>{
     return data.json();
   }).then((todosUsuarios) =>{
