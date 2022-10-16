@@ -18,14 +18,22 @@ public class UsuarioController {
     private UsuarioService usuarioService;
 
     @CrossOrigin(origins = "http://127.0.0.1:5500")
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public ResponseEntity<UsuarioModel> cadastraUsuario(@RequestBody UsuarioModel usuarioModel) {
+        return ResponseEntity.ok(usuarioService.cadastrarUsuario(usuarioModel));
+    }
+
+
+    @CrossOrigin(origins = "http://127.0.0.1:5500")
     @GetMapping
     public ResponseEntity<List<UsuarioModel>> buscarTudo() {
-        return ResponseEntity.ok(usuarioService.buscarNomes());
+        return ResponseEntity.ok(usuarioService.buscarUsuarios());
     }
 
     @CrossOrigin(origins = "http://127.0.0.1:5500")
-    @GetMapping(path = "pesquisaid/{id}")
-    public ResponseEntity<UsuarioModel> buscarPorId(@PathVariable Long id) {
+    @GetMapping(path = "/pesquisaid/{id}")
+    public ResponseEntity<UsuarioModel> buscaPorId(@PathVariable Long id) {
         return ResponseEntity.ok().body(usuarioService.findById(id));
     }
 
@@ -35,23 +43,17 @@ public class UsuarioController {
         return Optional.ofNullable(usuarioService.findByNomeUsuario(nomeUsuario));
     }
 
-    @CrossOrigin(origins = "http://127.0.0.1:5500")
-    @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public ResponseEntity<UsuarioModel> cadastrarUsuario(@RequestBody UsuarioModel usuarioModel) {
-        return ResponseEntity.ok(usuarioService.cadastrarUsuario(usuarioModel));
-    }
 
     @CrossOrigin(origins = "http://127.0.0.1:5500")
     @PatchMapping(path = "/put/{id}")
-    public ResponseEntity<UsuarioModel> alterarUsuario(@RequestBody UsuarioModel usuarioModel, @PathVariable Long id) {
+    public ResponseEntity<UsuarioModel> atualizaUsuario(@RequestBody UsuarioModel usuarioModel, @PathVariable Long id) {
         UsuarioModel usuarioNewObj = usuarioService.alterarCadUsuario(usuarioModel, id);
         return ResponseEntity.ok().body(usuarioNewObj);
     }
 
     @CrossOrigin(origins = "http://127.0.0.1:5500")
     @DeleteMapping(path = "/delete/{id}")
-    public void deletarConta(@PathVariable Long id) {
+    public void deletaConta(@PathVariable Long id) {
         usuarioService.deletarUsuario(id);
     }
 

@@ -14,8 +14,11 @@ public class UsuarioService {
     @Autowired
     private IUsuarioRepository iUsuarioRepository;
 
+    public UsuarioModel cadastrarUsuario(UsuarioModel usuarioModel) {
+        return iUsuarioRepository.save(usuarioModel);
+    }
 
-    public List<UsuarioModel> buscarNomes() {
+    public List<UsuarioModel> buscarUsuarios() {
         return iUsuarioRepository.findAll();
     }
 
@@ -26,10 +29,6 @@ public class UsuarioService {
 
     public List<UsuarioModel> findByNomeUsuario(String nomeUsuario) {
         return iUsuarioRepository.findByNomeUsuario(nomeUsuario);
-    }
-
-    public UsuarioModel cadastrarUsuario(UsuarioModel usuarioModel) {
-        return iUsuarioRepository.save(usuarioModel);
     }
 
     public UsuarioModel alterarCadUsuario(UsuarioModel usuarioModel, Long id) {
