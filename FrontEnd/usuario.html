@@ -6,54 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Usuario</title>
-    <div></div>
 </head>
 <body>
-    <!--Navbar ou menu-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">Página inicial</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="usuario.html">Cadastro Usuario</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="usuarioGetPut.html">UsuarioGetPut</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="contasReceber.html">Contas a Receber</a>
-                </li>
-            </ul>
-            </div>
-        </div>
-        </nav>
+              <!--Navbar ou menu-->
+              <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="index.html">Main page</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="usuario.html">User Registration</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="usuarioGetPut.html">Get/Update- User</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="index.html">Exit</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>    
+    <h1 class="text-center ">User Registration</h1>
 
+     <!--Form para cadastro de usuários-->
+     <form id="usuario-form">
+        <div class="m-5">
+           <h1 class="text-truncate"><label class="form-label">Enter Username</label></h1> 
+            <input type="text" name = "nomeUsuario" class="form-control" id="nomeUsuario" placeholder="Inform your user name" required>
+        </div>
+        <div class="m-5">
+            <h1 class="text-truncate"><label class="form-label">Birth data</label></h1>
+            <input type="text" name = "dataNascimento" class="form-control" id="dataNascimento" placeholder="Inform your birth data">
+        </div>
+        <div class="m-5">
+            <h1 class="text-truncate"><label class="form-label">CPF</label></h1>
+            <input type="text" name = "cpf"  class="form-control" id="cpf" placeholder="Inform your CPF" required>
+        </div>
 
-   <h1 class = "text-center">Cadastro de Usuários</h1> 
-
-    <!--Form para cadastro de usuários-->
-    <form id="usuario-form">
         <div class="m-5">
-            <h1 class="text-center"><label class="form-label">Name user</label><h1>
-            <input type="text" name = "nomeUsuario" class="form-control" id="nomeUsuario" placeholder="Inform your name" required>
+            <h1 class="text-truncate"><label class="form-label">Email</label></h1>
+            <input type="email" name = "email" class="form-control" id="email" placeholder="Inform your E-mail" required>
         </div>
-        <div class="m-5">
-            <h1 class="text-center"><label class="form-label">Birth data</label><h1>
-            <input type="text" name = "dataNascimento" class="form-control" id="dataNascimento" placeholder="Birth data">
-        </div>
-        <div class="m-5">
-            <h1 class="text-center"><label class="form-label">CPF</label><h1>
-            <input type="text" name = "cpf"  class="form-control" id="cpf" placeholder="Inform your cpf" required>
-        </div>
-        <div class="m-5">
-            <h1 class="text-center"><label class="form-label"> E-mail</label><h1>
-            <input type="email" name = "email" class="form-control" id="email" placeholder="Inform your email" required> 
-        </div>
-        <button type="submit" onclick="msg()" class="btn btn-lg  btn-dark m-2 d-grid gap col-2 mx-auto">Enviar</button>
+        <button type="submit" onclick="msg()" class="btn btn-lg btn-primary m-3 d-grid gap-2 col-2 mx-auto">Send</button>
     </form>
 
 
@@ -63,9 +61,9 @@
         <!--cabeçalho-->
         <thead>
             <tr>
-                <th scope="col">ID user</th>
+                <th scope="col">Id user</th>
                 <th scope="col">Name user</th>
-                <th scope="col">birth data</th>
+                <th scope="col">Birth data</th>
                 <th scope="col">CPF</th>
                 <th scope="col">E-mail</th>
             </tr>
@@ -74,11 +72,7 @@
         <tbody id="usuarioDados">
         </tbody>
     </table>
-    <!--Caminho para o JS, pasta e arquivo-->
+
     <script src="js/usuario.js" ></script>
 </body>
-</html>
-
-
-</body>
-</html>
+</html
