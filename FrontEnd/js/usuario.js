@@ -41,6 +41,6 @@ fetch("http://localhost:8080/usuarios").then((data)=>{
           `
       })
       document.getElementById("usuarioDados").innerHTML = data1;
-      console.log(todosUsuarios);
+      console.log(todosUsuarios); 
   })
   
